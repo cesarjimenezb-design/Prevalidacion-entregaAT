@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prevalidación de Entrega de Ayuda Técnica - Teletón</title>
+
+<!-- Tipografía institucional -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --rojo-teleton: #D71920;
+    --gris-fondo: #F5F5F5;
+    --azul-texto: #003366;
+    --borde-claro: #D8D8D8;
+  }
+
+  body {
+    font-family: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+    background-color: var(--gris-fondo);
+    margin: 0;
+    padding: 0;
+    color: #222;
+  }
+
+  h2 {
+    color: var(--rojo-teleton);
+    text-align: center;
+    margin: 25px 0 10px;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .section {
+    border: 2px solid var(--rojo-teleton);
+    margin: 20px;
+    border-radius: 6px;
+    background-color: #fafafa;
+  }
+
+  .section h3 {
+    background-color: var(--rojo-teleton);
+    color: white;
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .section-content {
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px 20px;
+    box-sizing: border-box;
+  }
+
+  label {
+    font-weight: 600;
+    color: var(--azul-texto);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--borde-claro);
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  input[readonly] {
+    background-color: #f1f1f1;
+    color: #555;
+  }
+
+  textarea {
+    resize: none;
+    grid-column: 1 / -1;
+    height: 70px;
+  }
+
+  /* BOTONES */
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 30px;
+    border-top: 2px solid var(--rojo-teleton);
+    background-color: #fafafa;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-secondary {
+    background-color: #555;
+  }
+
+  .btn-secondary:hover {
+    background-color: #333;
+  }
+
+  .btn-save {
+    background-color: var(--rojo-teleton);
+  }
+
+  .btn-save:hover {
+    background-color: #b91318;
+  }
+
+  @media (max-width: 700px) {
+    .buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  @media print {
+    .buttons { display: none; }
+    body { background: white; }
+    .container { box-shadow: none; border: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Prevalidación de Entrega de Ayuda Técnica - Teletón</h2>
+
+  <!-- DATOS PACIENTE -->
+  <div class="section">
+    <h3>Datos del Paciente</h3>
+    <div class="section-content">
+      <div><label>Nombre</label><input type="text" value="130103 - BEJAMIN ISAAC LORENZO CRUZ SALINAS" readonly></div>
+      <div><label>Edad</label><input type="text" value="1 año 10 meses" readonly></div>
+      <div><label>Instituto</label><input type="text" value="12 - IQUIQUE" readonly></div>
+      <div><label>Estado</label><input type="text" value="E - ACTIVO" readonly></div>
+      <div><label>Diag. Específico</label><input type="text" value="PREMATURO SIN TIPIFICAR" readonly></div>
+      <div><label>Comp. Funcional</label><input type="text" value="Moderado" readonly></div>
+      <div><label>Dirección</label><input type="text" value="LAS MAGNOLIAS 1919, IQUIQUE" readonly></div>
+      <div><label>Teléfonos</label><input type="text" value="Mamá: 9-30556151 / Abuela: 9-72699896" readonly></div>
+      <div><label>Representante Legal</label><input type="text" placeholder="(si aplica)"></div>
+    </div>
+  </div>
+
+  <!-- DATOS INDICACIÓN -->
+  <div class="section">
+    <h3>Datos de Indicación</h3>
+    <div class="section-content">
+      <div><label>Correlativo</label><input type="text" value="67966" readonly></div>
+      <div><label>Profesional Evaluador</label><input type="text" value="García Pasten Verónica - 12 KI002" readonly></div>
+      <div><label>Artículo Solicitado</label><input type="text" value="MESA CAJÓN CHICA" readonly></div>
+    </div>
+  </div>
+
+  <!-- DATOS CONTRATO -->
+  <div class="section">
+    <h3>Datos del Contrato</h3>
+    <div class="section-content">
+      <div><label>Fecha Contrato</label><input type="date" value="2025-10-29"></div>
+      <div><label>Fecha Expiración</label><input type="date" value="2028-10-29"></div>
+      <div><label>Nombre Receptor</label><input type="text" placeholder="Ingrese nombre del receptor"></div>
+      <div><label>Domicilio Receptor</label><input type="text" placeholder="Ingrese domicilio del receptor"></div>
+      <div><label>Región</label>
+        <select>
+          <option>No indicada</option>
+          <option>Tarapacá</option>
+          <option>Antofagasta</option>
+          <option>Metropolitana</option>
+        </select>
+      </div>
+      <div><label>Comuna</label>
+        <select>
+          <option>No informada</option>
+          <option>Iquique</option>
+          <option>Alto Hospicio</option>
+        </select>
+      </div>
+      <div><label>Parentesco</label>
+        <select>
+          <option>SE DESCONOCE</option>
+          <option>Madre</option>
+          <option>Padre</option>
+          <option>Abuelo/a</option>
+          <option>Tutor Legal</option>
+        </select>
+      </div>
+      <div><label>RUT Receptor</label><input type="text" value="153684421"></div>
+      <div><label>Teléfono Receptor</label><input type="text" placeholder="Ingrese teléfono de contacto"></div>
+    </div>
+  </div>
+
+  <!-- OBSERVACIONES -->
+  <div class="section">
+    <h3>Observaciones</h3>
+    <div class="section-content">
+      <textarea placeholder="Ingrese observaciones relevantes antes de generar el contrato..."></textarea>
+    </div>
+  </div>
+
+  <!-- BOTONES -->
+  <div class="buttons">
+    <button class="btn btn-secondary" onclick="window.close()">Cerrar</button>
+    <a href="https://cesarjimenezb-design.github.io/Contrato-Ayuda-Tecnica/" target="_blank" class="btn btn-save" onclick="alert('✅ Datos guardados correctamente.')">Guardar</a>
+  </div>
+</div>
+
+</body>
+</html>
